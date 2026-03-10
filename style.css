@@ -1,0 +1,219 @@
+/* ===================================================================== */
+/*  The following CSS was created using Theme Editor.                    */
+/*  To modify this CSS, click "Open Theme Editor".                       */
+/* ===================================================================== */
+
+/* ===================================================================== */
+/*  Font-Family                                                          */
+/* ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700'); 
+    
+body, select, textarea, input, button {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* ===================================================================== */
+/*  Root - CSS Variables                                                 */
+/* ===================================================================== */
+
+:root {
+    
+    /* Color - Brand */
+    --color-primary: #321336;
+    --color-secondary: #321336;
+
+    --color-content: #bdadbe;
+
+    --color-primary-hover: #260e28;
+    --color-primary-selected: rgba(50, 19, 54, .12);
+    
+    /* App Settings */
+    --color-background-body: #f3f6f8;
+    --color-background-login: #8e44ad;
+    --header-color: #ffffff;
+    
+    /* Dark Theme */
+    --background-dark-theme: rgba(255, 255, 255, .1);
+    --background-dark-theme-hover: rgba(255, 255, 255, .2);
+}
+
+/* Login and Splash Color */
+
+.login-screen,
+.layout-native .login-screen {
+    background-color: var(--color-background-login);
+}
+
+.login-form,
+.tablet .layout-native .login-form {
+    background-color: var(--background-dark-theme);
+}
+
+.login-screen .animated-label-text {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.splash-loading {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.splash-loading-bar {
+    background: var(--color-neutral-0);
+}
+
+.login-screen label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-form a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-screen [class*='text-neutral'] {
+    color: var(--color-neutral-0);
+}
+
+
+/* ===================================================================== */
+/* Custom Font Utility Classes                                          */
+/* ===================================================================== */
+
+.ubuntu-light { font-weight: 300; }
+.ubuntu-regular { font-weight: 400; }
+.ubuntu-medium { font-weight: 500; }
+.ubuntu-bold { font-weight: 700; }
+
+.ubuntu-light-italic { font-weight: 300; font-style: italic; }
+.ubuntu-regular-italic { font-weight: 400; font-style: italic; }
+.ubuntu-medium-italic { font-weight: 500; font-style: italic; }
+.ubuntu-bold-italic { font-weight: 700; font-style: italic; }
+
+/* ===================================================================== */
+/* Main Layout & Backgrounds                                            */
+/* ===================================================================== */
+
+.layout .main-content.ThemeGrid_Container {
+    padding: 0;
+}
+
+/* 1. The Light Pink Page Background */
+.page-wrapper {
+    background-color: #f8eeff;
+    min-height: 100vh;
+}
+
+/* 2. The Dark Purple Header with Lines */
+.header {
+    background-color: #301534;
+    background-image: url('../img/FAQAccordion.backgroundpatterndesktop.svg?QWTPTcqwB6UHN7psYHZjBw');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+}
+
+/* ===================================================================== */
+/* FAQ Card & Title Elements                                            */
+/* ===================================================================== */
+
+.faq-card-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: var(--space-l);
+    width: 90%;
+    max-width: 600px;
+    margin: -200px auto 50px auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title img {
+    height: 36px;
+    padding-right: 20px;
+}
+
+.title span {
+    font-size: 42px;
+    font-weight: var(--font-bold);
+    color: var(--color-primary);
+}
+
+/* ===================================================================== */
+/* Accordion Overrides                                                  */
+/* ===================================================================== */
+
+.osui-accordion-item {
+  --accordion-active-border-size: 0px;
+}
+
+/* Target last wrapper block to remove bottom padding */
+.osui-accordion .list > .OSBlockWidget:last-of-type .osui-accordion-item {
+    padding-bottom: 0px;
+}
+
+/* Remove borders from items inside lists */
+.osui-accordion .osui-accordion-item, 
+.osui-accordion .list .osui-accordion-item {
+    border-width: 0px;
+    border-radius: 8px;
+}
+
+/* Adjust padding when item is open */
+.osui-accordion .osui-accordion-item.osui-accordion-item--is-open .osui-accordion-item__content {
+    padding-bottom: var(--space-l);
+}
+
+/* Title styling */
+.osui-accordion-item__title {
+    color: var(--color-primary);
+    padding: var(--space-m) 0;
+    font-size: var(--font-size-base);
+    letter-spacing: 0.03em;
+}
+
+.osui-accordion-item__title:hover {
+    color: var(--color-hover);
+    transition: color 0.3s ease;
+}
+
+.osui-accordion-item__title__placeholder {
+    text-overflow: ellipsis;
+    width: 100%;
+    padding-right: var(--space-base);
+    line-height: normal;
+}
+
+/* Icon width */
+.osui-accordion-item__icon {
+    width: 28px;
+}
+
+/* Content styling */
+.osui-accordion-item__content {
+    padding: 0 0 var(--space-s) 0;
+    color: var(--color-content);
+    letter-spacing: 0.04em;
+    
+}
+
+/* PHONE */
+
+
+@media (max-width: 768px) {
+    .header {
+        background-image: url('../img/FAQAccordion.backgroundpatternmobile.svg?CGoI167CCbCtH28EoN4Udg');      
+    }
+    
+    .faq-card-container {
+        margin-top: -140px; 
+        width: 90%;
+        padding: var(--space-m);
+    }
+}
