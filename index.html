@@ -68,6 +68,28 @@
             </div>
         </main>
     </div>
+<script>
+    document.querySelectorAll('.osui-accordion-item__title').forEach(item => {
+        item.addEventListener('click', () => {
+            const parent = item.parentElement;
+            const isOpen = parent.classList.contains('osui-accordion-item--is-open');
+            const icon = item.querySelector('img');
 
+            // Close all other items (Optional: remove this if you want multiple open at once)
+            document.querySelectorAll('.osui-accordion-item').forEach(el => {
+                el.classList.remove('osui-accordion-item--is-open');
+                el.querySelector('img').src = 'assets/images/icon-plus.svg';
+            });
+
+            // Toggle the clicked item
+            if (!isOpen) {
+                parent.classList.add('osui-accordion-item--is-open');
+                icon.src = 'assets/images/icon-minus.svg';
+            } else {
+                icon.src = 'assets/images/icon-plus.svg';
+            }
+        });
+    });
+</script>
 </body>
 </html>

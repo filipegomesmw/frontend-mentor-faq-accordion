@@ -1,0 +1,120 @@
+// 1. Imports
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+// 2. Variables
+$color-primary: #321336;
+$color-hover: #AD28EB;
+$color-content: #8B6E91;
+$color-white: #ffffff;
+$color-bg-light: #F8EEFF;
+
+$font-main: 'Work Sans', sans-serif;
+$transition-smooth: 0.3s ease;
+
+// 3. Mixins
+@mixin flex-center-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// 4. Global Styles
+body {
+    font-family: $font-main;
+    margin: 0;
+    padding: 0;
+    background-color: $color-bg-light;
+}
+
+// 5. Layout Components
+.page-wrapper {
+    min-height: 100vh;
+
+    .header {
+        background-color: $color-primary;
+        background-image: url('assets/images/background-pattern-desktop.svg');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: top center;
+        height: 300px;
+        width: 100%;
+
+        @media (max-width: 600px) {
+            background-image: url('assets/images/background-pattern-mobile.svg');
+            height: 232px;
+        }
+    }
+}
+
+// 6. The FAQ Card
+.faq-card-container {
+    background-color: $color-white;
+    border-radius: 15px;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    margin: -140px auto 50px auto;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    @media (max-width: 600px) {
+        margin-top: -100px;
+        padding: 24px;
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 24px;
+
+        img {
+            height: 30px;
+            margin-right: 20px;
+        }
+
+        span {
+            font-size: 32px;
+            font-weight: 700;
+            color: $color-primary;
+        }
+    }
+}
+
+// 7. Accordion (Nesting in action)
+.osui-accordion {
+    &-item {
+        border-bottom: 1px solid #f1f1f1;
+        padding: 20px 0;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &__title {
+            @include flex-center-between;
+            color: $color-primary;
+            cursor: pointer;
+            font-weight: 600;
+            gap: 20px;
+            transition: color $transition-smooth;
+
+            &:hover {
+                color: $color-hover;
+            }
+        }
+
+        &__content {
+            display: none;
+            padding-top: 15px;
+            color: $color-content;
+            line-height: 1.6;
+        }
+
+        // State Modifier
+        &--is-open {
+            .osui-accordion-item__content {
+                display: block;
+            }
+        }
+    }
+}
