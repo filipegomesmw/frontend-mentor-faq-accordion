@@ -1,48 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | FAQ accordion</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor | FAQ Accordion</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="phone portrait windows chrome">
 
-  FAQs
+    <div class="page-wrapper">
+        <div class="header"></div>
 
-  What is Frontend Mentor, and how will it help me?
+        <main class="faq-card-container">
+            <div class="title">
+                <img src="assets/images/icon-star.svg" alt="star icon">
+                <span id="TitleFaqs">FAQs</span>
+            </div>
 
-  Frontend Mentor offers realistic coding challenges to help developers improve their 
-  frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
-  all levels and ideal for portfolio building.
+            <div class="osui-accordion">
+                <div class="osui-accordion-item osui-accordion-item--is-open">
+                    <div class="osui-accordion-item__title">
+                        <span class="bold">What is Frontend Mentor, and how will it help me?</span>
+                        <div class="osui-accordion-item__icon--custom">
+                            <img src="assets/images/icon-minus.svg" alt="minus icon">
+                        </div>
+                    </div>
+                    <div class="osui-accordion-item__content">
+                        <span>Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.</span>
+                    </div>
+                </div>
 
-  Is Frontend Mentor free?
+                <div class="osui-accordion-item">
+                    <div class="osui-accordion-item__title">
+                        <span class="bold">Is Frontend Mentor free?</span>
+                        <div class="osui-accordion-item__icon--custom">
+                            <img src="assets/images/icon-plus.svg" alt="plus icon">
+                        </div>
+                    </div>
+                    <div class="osui-accordion-item__content">
+                        <span>The majority of our challenges are free, yes. We do have some that are premium and require a Pro subscription to access. It will say on each challenge whether they are free or premium.</span>
+                    </div>
+                </div>
 
-  Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
-  option providing access to a range of projects suitable for all skill levels.
+                <div class="osui-accordion-item">
+                    <div class="osui-accordion-item__title">
+                        <span class="bold">Can I use these projects in my portfolio?</span>
+                        <div class="osui-accordion-item__icon--custom">
+                            <img src="assets/images/icon-plus.svg" alt="plus icon">
+                        </div>
+                    </div>
+                    <div class="osui-accordion-item__content">
+                        <span>Definitely! Please do feel free to use whatever you build in your portfolio. Helping developers add professional-looking projects to their portfolio was one of the reasons we created this platform!</span>
+                    </div>
+                </div>
 
-  Can I use Frontend Mentor projects in my portfolio?
+                <div class="osui-accordion-item">
+                    <div class="osui-accordion-item__title">
+                        <span class="bold">How can I get help if I'm stuck on a challenge?</span>
+                        <div class="osui-accordion-item__icon--custom">
+                            <img src="assets/images/icon-plus.svg" alt="plus icon">
+                        </div>
+                    </div>
+                    <div class="osui-accordion-item__content">
+                        <span>The best way to get help is in our Discord server. There are thousands of other developers in there, so it's a great place to ask questions.</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 
-  Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
-  way to showcase your skills to potential employers!
-
-  How can I get help if I'm stuck on a Frontend Mentor challenge?
-  
-  The best place to get help is inside Frontend Mentor's Discord community. There's a help 
-  channel where you can ask questions and seek support from other community members.
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
